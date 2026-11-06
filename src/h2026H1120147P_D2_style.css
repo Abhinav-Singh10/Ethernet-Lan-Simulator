@@ -1,0 +1,53 @@
+@import "tailwindcss";
+@import "@xyflow/react/dist/style.css" layer(components);
+
+@theme {
+  --font-sans: Inter, ui-sans-serif, system-ui, sans-serif;
+  --color-page: #ffffff;
+  --color-panel: #ffffff;
+  --color-foreground: #202124;
+  --color-line: #d8dde5;
+  --color-muted: #596273;
+  --color-accent: #2457d6;
+  --color-accent-hover: #1c45ad;
+  --color-accent-soft: #eaf0fc;
+  --color-success: #15803d;
+  --color-success-soft: #eaf6ed;
+  --color-red: #b91c1c;
+  --color-danger-soft: #fff0f2;
+  --color-control: #f5f6f8;
+  --color-hover: #e9ecf1;
+  --color-canvas: #ffffff;
+  --color-amber: #925a04;
+  --color-warning-soft: #fff5df;
+  --color-wire: #8791a2;
+
+  --animate-packet-flow: packet-flow 0.6s linear infinite;
+  --animate-packet-flow-reverse: packet-flow 0.6s linear infinite reverse;
+
+  @keyframes packet-flow {
+    to { stroke-dashoffset: -10; }
+  }
+}
+
+@layer base {
+  html {
+    @apply bg-page font-sans text-foreground scheme-light;
+  }
+
+  body {
+    @apply min-w-80 text-sm leading-[normal];
+  }
+
+  button, input, select, summary {
+    @apply outline-offset-3;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-solid outline-accent;
+  }
+
+  thead {
+    @apply bg-control;
+  }
+}
